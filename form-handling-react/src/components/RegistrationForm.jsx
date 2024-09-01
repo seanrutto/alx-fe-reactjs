@@ -13,9 +13,11 @@ const RegistrationForm = () => {
     if (!username) {
       newErrors.username = 'Username is required';
     }
+
     if (!email) {
       newErrors.email = 'Email is required';
     }
+
     if (!password) {
       newErrors.password = 'Password is required';
     }
@@ -23,9 +25,10 @@ const RegistrationForm = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      // Handle form submission logic, e.g., send data to the server
+      // Handle form submission logic
       console.log({ username, email, password });
-      // Clear the form after successful submission
+
+      // Clear the form and errors after successful submission
       setUsername('');
       setEmail('');
       setPassword('');
