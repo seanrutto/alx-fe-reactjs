@@ -11,7 +11,7 @@ const useRecipeStore = create((set) => ({
         })),
 
     deleteRecipe: (id) => 
-        set((state) =+ ({
+        set((state) => ({
             recipes: state.recipes.map(((recipe) => recipe.id !== id)),
         })),
 }))
