@@ -1,20 +1,25 @@
-import { useState } from 'react'
-import AddRecipeForm from './components/AddRecipeForm'
-import RecipeList from './components/RecipeList'
-import './App.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import RecipeList from './components/RecipeList';
+import AddRecipeForm from './components/AddRecipeForm';
+import RecipeDetails from './components/RecipeDetails';
 
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
+    <Router>
       <div>
         <h1>Recipe Manager</h1>
-        <AddRecipeForm />
-        <RecipeList />
+        <Switch>
+          <Route path="/" exact>
+            <AddRecipeForm />
+            <RecipeList />
+          </Route>
+          <Route path="/recipe/:recipeId">
+            <RecipeDetails />
+          </Route>
+        </Switch>
       </div>
-      
-  )
-}
+    </Router>
+  );
+};
 
-export default App
+export default App;
