@@ -10,10 +10,14 @@ const RegistrationForm = () => {
     e.preventDefault();
     const newErrors = {};
 
+<<<<<<< HEAD
     if (!username) {
       newErrors.username = 'Username is required';
     }
 
+=======
+    // Validation checks using if statements
+>>>>>>> 1f5924fef326914e289ae6a71589347d8360f0f8
     if (!email) {
       newErrors.email = 'Email is required';
     }
@@ -22,6 +26,7 @@ const RegistrationForm = () => {
       newErrors.password = 'Password is required';
     }
 
+<<<<<<< HEAD
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
@@ -29,6 +34,18 @@ const RegistrationForm = () => {
       console.log({ username, email, password });
 
       // Clear the form and errors after successful submission
+=======
+    if (!username) {
+      newErrors.username = 'Username is required';
+    }
+
+    // Using setErrors to update error state
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      // Submit the form or perform API call
+      console.log({ username, email, password });
+>>>>>>> 1f5924fef326914e289ae6a71589347d8360f0f8
       setUsername('');
       setEmail('');
       setPassword('');
